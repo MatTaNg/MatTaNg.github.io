@@ -10,4 +10,9 @@
    width: 80%;
    height: 10%;
    padding 10px;
+   border: 1px solid black;
+}
+#forum_table {
+   width: 100%;
+   border: 1px;
 }
