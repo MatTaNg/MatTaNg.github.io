@@ -3,14 +3,14 @@ body {
 }
 #content {
    background-color: red;
+   padding: 10px;
    margin-left: auto;
    margin-right: auto;
    width: 80%;
 }
 #logIn { 
-   margin-left: auto;  
-   margin-right:auto;  
-   width: 30%;
+   float: right;
+   width: 20%;
    height: 10%;
    border: solid 2px;  
    padding: 30px; 
@@ -23,10 +23,12 @@ body {
 }
 #forum_table {
    width: 100%;
-   border: 1px solid black;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   border: 1;
 }
 .forum_header {
-   background-color: red;
-   text-size: 18pt;
+   background-color: blue;
+   font-size: 18pt;
    font-style: strong;
 }
