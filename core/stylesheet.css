@@ -2,14 +2,14 @@ body {
    background-color: black;
 }
 #content {
-   background-color: red;
+   background-color: white;
    padding: 10px;
    margin-left: auto;
    margin-right: auto;
    width: 80%;
 }
 #logIn { 
-   float: right;
+   float: left;
    width: 20%;
    height: 8%;
    border: solid 2px;  
