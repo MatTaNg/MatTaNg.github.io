@@ -9,7 +9,7 @@
  <body> 
    <div id = "content"> 
      <div id = "title"> 
-       <a href = "#"><img src "" height = "100%" width = "100%"></a> 
+       <a href = "#"><img src = "" height = "100%" width = "100%"></a> 
      </div> 
  <form action="" id = "logIn" border = "1"> 
  
