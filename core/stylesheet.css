@@ -20,6 +20,7 @@ body {
    height: 200px;
    padding:; 10px;
    border: 1px solid black;
+   border-spacing: 10px;
    float:left;
 }
 #forum_table {
