@@ -19,7 +19,7 @@
        	 window.onload = function() {
             document.getElementsByClassName('form')[0].addEventListener('submit', function(event) {
                 event.preventDefault();
-                document.getElementByClassName('form')[0].reset();                
+                document.getElementsByClassName('form')[0].reset();                
                 this.contact_number.value = Math.random() * 100000 | 0;
                 emailjs.sendForm('portfolio', 'portfolio_form', this);
             });
@@ -54,14 +54,14 @@
                 <use xlink:href="assets/untitled-font-1/icons.svg#icon-line-chart"></use>
                 <span class="about__icons-chart--text">
                 	<span class="heading-secondary spacing-bottom-small">Scalable</span>
-                	<p class="content-text">Its important for me to think about the future success of the project when it is scaled to millions of other users</p>
+                	<p class="content-text">It is important for me to think about the future success of the project when it is scaled to millions of other users</p>
                 </span>
             </svg>
 	        <svg class="about__icons-wrench">
                 <use xlink:href="assets/untitled-font-1/icons.svg#icon-wrench"></use>
                 <span class="about__icons-wrench--text">
                 	<span class="heading-secondary spacing-bottom-small">Maintainable</span>
-                	<p class="content-text">Bug fixes should not take long to implement nor should cropping up where they shouldn't!</p>
+                	<p class="content-text">Bug fixes should not take long to implement nor should they be cropping up where they shouldn't!</p>
                 </span>
             </svg>
             	<div class="about__biography">
@@ -153,7 +153,7 @@
 				<span class="skills__icon-text">Jira</span>
 				<i class="skills__icon fab fa-bitbucket"></i>
 				<span class="skills__icon-text">BitBucket</span>
-                <img class="skills__icon" src="assets/images/Bamboo.jpg" alt="Protractor logo"/>
+                <img class="skills__icon" src="assets/images/bamboo.jpg" alt="Bamboo logo"/>
 				<span class="skills__icon-text">Bamboo</span>
 				<i class="skills__icon fab fa-github"></i>
 				<span class="skills__icon-text">Git</span>
