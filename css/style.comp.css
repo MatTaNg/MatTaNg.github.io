@@ -1,0 +1,95 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
+
+.container {
+  display: grid;
+  grid-template-rows: repeat(7, 100vh);
+  grid-template-columns: [full-start] 1fr [content-start] repeat(8, [col-start] 10vw) [content-end] 1fr [full-end]; }
+
+.heading-primary {
+  font-size: 5rem; }
+
+.heading-secondary {
+  font-size: 3rem; }
+
+.projects {
+  grid-column: content-start / content-end; }
+
+.skills {
+  grid-column: content-start / content-end; }
+
+.work-experience {
+  grid-column: content-start / content-end; }
+
+.blog {
+  grid-column: content-start / content-end; }
+
+.contact {
+  grid-column: content-start / content-end; }
+
+.about {
+  grid-column: content-start / content-end;
+  display: grid;
+  grid-template-rows: 20vh 20vh 10vh 50vh;
+  grid-template-columns: 1fr 20vw 20vw 20vw 20vw 1fr; }
+  .about__heading-box {
+    grid-column: 3 / 4;
+    justify-self: end;
+    transform: translate(50%, 50%); }
+  .about__icons-bolt, .about__icons-laptop, .about__icons-chart, .about__icons-wrench {
+    width: 10rem;
+    height: 10rem;
+    align-self: center;
+    justify-self: center;
+    grid-row: 2 / 3;
+    grid-column: 2 / 3; }
+    .about__icons-bolt--text, .about__icons-laptop--text, .about__icons-chart--text, .about__icons-wrench--text {
+      align-self: center;
+      justify-self: center;
+      grid-row: 3 / 4;
+      grid-column: 2 / 3; }
+  .about__icons-laptop {
+    grid-column: 3 / 4; }
+    .about__icons-laptop--text {
+      grid-column: 3 / 4; }
+  .about__icons-chart {
+    grid-column: 4 / 5; }
+    .about__icons-chart--text {
+      grid-column: 4 / 5; }
+  .about__icons-wrench {
+    grid-column: 5 / 6; }
+    .about__icons-wrench--text {
+      grid-column: 5 / 6; }
+
+.header {
+  background-image: linear-gradient(to right bottom, rgba(40, 75, 189, 0.5), rgba(22, 41, 105, 0.5)), url(../../assets/header-image.jpg);
+  background-size: cover;
+  grid-column: full-start / full-end;
+  display: grid;
+  grid-template-rows: 1fr 20vh 20vh 1fr;
+  grid-template-columns: 1fr minmax(30vw, min-content) 1fr; }
+
+.header__image {
+  border-radius: 100rem;
+  height: 30rem;
+  width: 30rem;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  justify-self: center; }
+
+.header__text {
+  grid-row: 4 / 5;
+  grid-column: 2 / 3;
+  justify-self: center;
+  font-size: 3rem;
+  color: white; }

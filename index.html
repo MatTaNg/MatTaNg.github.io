@@ -1,51 +1,373 @@
-<!DOCTYPE>
-
+<!DOCTYPE html>
 <html lang="en">
 	<head>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-	</head>
-	<body>
-		<div class="container">
-			<div class="row">
-				<div class="col">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-				</div>
-			</div>
-			<div class="row">
-				<div class="col">
-					
-				</div>
-			</div>
-		</div>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+		<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
 		<script type="text/javascript">
-			(function () {
-				'use strict'
-				const pokemonUrl = "https://pokeapi.co/api/v2/";
-				const starWarsUrl= "https://swapi.co/api/people/1";
-
-				function init() {
-					getPokemonData();
-					getStarWarsData();
-				}
-
-				function getPokemonData () {
-
-				}
-// {mode: "no-cors", method: "GET", credentials: "same-origin", headers: {"content-type": "application/json"}}
-				function getStarWarsData () {
-					fetch(starWarsUrl, {mode: "no-cors", method: "GET", headers: {'Access-Control-Allow-Origin':'*',"content-type": "application/json"}})
-						.then(function(response) {
-							console.log("Response", response.status);
-							return response.json();
-						}).then(function(json) {
-
-						}).catch( function (error) {
-							console.log("API call failed in api.starWarsInfo", error);
-						})	
-				}
-
-				init();
-			})()
+		   (function(){
+		      emailjs.init("user_22d66CvNYiqqnPgLXzjvf");
+		   })();
 		</script>
-	</body>
-</html>
+	    <script type="text/javascript">
+       	 window.onload = function() {
+            document.getElementsByClassName('form')[0].addEventListener('submit', function(event) {
+                event.preventDefault();
+                document.getElementByClassName('form')[0].reset();                
+                this.contact_number.value = Math.random() * 100000 | 0;
+                emailjs.sendForm('portfolio', 'portfolio_form', this);
+            });
+        }
+	    </script>
+	</head>
+	<body class="container">
+		<header class="header">
+			<img src="./assets/headshot.jpg" alt="headshot image" class="header__image"/>
+			<p class="header__text">Font End Web Developer with deep JavaScript knowledge who specializes in React with a passion for coding!</p>
+		</header>
+		<section class="about">
+			<div class="about__heading-box">
+				<div class="heading-primary">About</div>
+			</div>
+	        <svg class="about__icons-bolt">
+                <use xlink:href="assets/untitled-font-1/icons.svg#icon-bolt"></use>
+                <span class="about__icons-bolt--text">
+                	<span class="heading-secondary spacing-bottom-small">Fast</span>                	
+                	<p class="content-text">Nobody wants to wait for websites to load!  All my code will be as fast as possible.</p>
+                </span>
+            </svg>
+	        <!--<svg class="about__icons-laptop">-->
+	        	<div class="about__icons-laptop fas fa-vials"></div>
+                <!--<use class="fas fa-vials" xlink:href="assets/untitled-font-1/icons.svg#icon-laptop"></use>-->
+                <span class="about__icons-laptop--text">
+                	<span class="heading-secondary spacing-bottom-small">Testable</span>
+                	<p class="content-text">It is important that all code has written automated tests. Manual testing is time consuming!</p>
+                </span>
+            <!--</svg>-->
+	        <svg class="about__icons-chart">
+                <use xlink:href="assets/untitled-font-1/icons.svg#icon-line-chart"></use>
+                <span class="about__icons-chart--text">
+                	<span class="heading-secondary spacing-bottom-small">Scalable</span>
+                	<p class="content-text">Its important for me to think about the future success of the project when it is scaled to millions of other users</p>
+                </span>
+            </svg>
+	        <svg class="about__icons-wrench">
+                <use xlink:href="assets/untitled-font-1/icons.svg#icon-wrench"></use>
+                <span class="about__icons-wrench--text">
+                	<span class="heading-secondary spacing-bottom-small">Maintainable</span>
+                	<p class="content-text">Bug fixes should not take long to implement nor should cropping up where they shouldn't!</p>
+                </span>
+            </svg>
+            	<div class="about__biography">
+					<span class="heading-secondary">Wait..is it Patt? Or Matt??</span>
+					<img class="about__biography--image" src="./assets/headshot.jpg" alt="headshot"/>
+					<p class="about__biography--text content-text">It's Matt!  I am passionate about writing beautiful JavaScript code which is maintainable, readable, testable and scaleable.  I love to keep up to date with the latest JavaScript news and create stunning applications which offer solutions to problems!</p>
+				</div>
+
+				<div class="about__skills heading-secondary">
+					<div class="about__skills-container">
+						<div class="about__skills--text">JavaScript</div>
+						<div class="about__skills--javascript-bar">
+						</div>
+						<div class="about__skills--percent">80%</div>
+					</div>
+					<div class="about__skills-container">
+						<div class="about__skills--text">AngularJS</div>
+						<div class="about__skills--angularjs-bar">
+						</div>
+						<div class="about__skills--percent">70%</div>
+					</div>
+					<div class="about__skills-container">
+						<div class="about__skills--text">React-Redux</div>
+						<div class="about__skills--react-redux-bar">
+						</div>
+						<div class="about__skills--percent">60%</div>
+					</div>
+					<div class="about__skills-container">
+						<div class="about__skills--text">HTML5</div>
+						<div class="about__skills--html-bar">
+						</div>
+						<div class="about__skills--percent">80%</div>
+					</div>
+					<div class="about__skills-container">
+						<div class="about__skills--text">CSS3</div>
+						<div class="about__skills--css-bar">
+						</div>
+						<div class="about__skills--percent">65%</div>
+					</div>
+					<div class="about__skills-container">
+						<div class="about__skills--text">Sculpted Abs</div>
+						<div class="about__skills--sculpted-body-bar">
+						</div>
+						<div class="about__skills--percent">100%</div>
+					</div>
+				</div>
+
+		</section>
+		<section class="skills">
+			<div class="about__heading-box">
+				<div class="heading-primary">SKILLS</div>
+			</div>
+			<div class="skills__languages">
+				<div class="skills__title heading-bar">Languages</div>
+				<i class="skills__icon fab fa-java"></i>
+				<span class="skills__icon-text">Java</span>
+				<i class="skills__icon fab fa-js"></i>
+				<span class="skills__icon-text">JavaScript</span>
+				<i class="skills__icon fab fa-html5"></i>
+				<span class="skills__icon-text">HTML5</span>
+				<i class="skills__icon fab fa-css3-alt"></i>
+				<span class="skills__icon-text">CSS3</span>
+				<i class="skills__icon fab fa-sass"></i>
+				<span class="skills__icon-text">SASS</span>
+			</div>
+			<div class="skills__javascript">
+				<div class="skills__title heading-bar">JavaScript</div>
+				<i class="skills__icon fab fa-angular"></i>
+				<span class="skills__icon-text">AngularJS</span>
+				<i class="skills__icon fab fa-react"></i>
+				<span class="skills__icon-text">ReactJS</span>
+                <img class="skills__icon" src="assets/images/redux.svg" alt="Redux logo"/>
+				<span class="skills__icon-text">Redux</span>			
+			</div>
+			<div class="skills__testing">
+				<div class="skills__title heading-bar">Testing</div>
+                <img class="skills__icon" src="assets/images/jasmine.svg" alt="Jasmine logo"/>
+				<span class="skills__icon-text">Jasmine</span>
+                <img class="skills__icon" src="assets/images/protractor.png" alt="Protractor logo"/>
+				<span class="skills__icon-text">Protractor</span>
+                <img class="skills__icon" src="assets/images/cucumber.jpg" alt="Cucumber logo"/>
+				<span class="skills__icon-text">Cucumber</span>
+                <img class="skills__icon" src="assets/images/jest.svg" alt="Cucumber logo"/>
+				<span class="skills__icon-text">Jest</span>
+			</div>
+			<div class="skills__tools">
+				<div class="skills__title heading-bar">Tools</div>
+				<i class="skills__icon fab fa-jira"></i>
+				<span class="skills__icon-text">Jira</span>
+				<i class="skills__icon fab fa-bitbucket"></i>
+				<span class="skills__icon-text">BitBucket</span>
+                <img class="skills__icon" src="assets/images/Bamboo.jpg" alt="Protractor logo"/>
+				<span class="skills__icon-text">Bamboo</span>
+				<i class="skills__icon fab fa-github"></i>
+				<span class="skills__icon-text">Git</span>
+				<i class="skills__icon fab fa-jenkins"></i>
+				<span class="skills__icon-text">Jenkins</span>
+			</div>
+			<div class="skills__other">
+				<div class="skills__title heading-secondary heading-bar">Other</div>
+				<i class="skills__icon fas fa-universal-access"></i>
+				<span class="skills__icon-text">Accessibility</span>
+				<i class="skills__icon fas fa-search-plus"></i>
+				<span class="skills__icon-text">SEO</span>
+				<i class="skills__icon fas fa-brain"></i>
+				<span class="skills__icon-text">INTJ</span>
+			</div>
+		</section>
+		<section class="work-experience">
+			<div class="about__heading-box">
+				<div class="heading-primary">WORK EXPERIENCE</div>
+			</div>
+
+			<div class="work-experience__vui">
+				<div class="work-experience__crewnet--text heading-bar">Vanguard - Vanguard User Interface
+					<span style="float: right;">(4 Months) 11/2019 - 3/2019</span>
+				</div>
+				<ul class="work-experience__vui--content-1 content-text-big">
+					<li><i class="fas fa-check-circle"></i>Drove the value of Vanguard's UI Component Library by developing new components</li>
+					<li><i class="fas fa-check-circle"></i>Created fully accessibile UI components based off of A11y accessibility guidelines and design specs</li>					
+				</ul>
+				<ul class="work-experience__vui--content-2 content-text-big">
+					<li><i class="fas fa-check-circle"></i>Volunteer instructor for UI Bootcamp where I train a class of 18 students on UI technologies for developers</li>					
+				</ul>
+	            <div class="work-experience__tech-used-vui">Technologies Used</div>
+	            <div class="work-experience__tech-used-vui--container">
+	            	<div class="work-experience__tech-used-vui--item fab fa-angular"></div>
+					<span class="work-experience__tech-used-vui--text">Angular7</span>
+	                <img class="work-experience__tech-used-vui--item" src="assets/images/jasmine.svg" alt="Jasmine logo"/>
+					<span class="work-experience__tech-used-vui--text">Jasmine</span>
+	            	<div class="work-experience__tech-used-vui--item fab fa-atlassian"></div>
+					<span class="work-experience__tech-used-vui--text">Atlassian</span>
+	            	<div class="work-experience__tech-used-vui--item fas fa-universal-access"></div>
+					<span class="work-experience__tech-used-vui--text">Accessibility</span>
+	            </div>
+			</div>
+			<div class="work-experience__crewnet"> 
+				<div class="work-experience__crewnet--text heading-secondary heading-bar">Vanguard - CrewNet 
+					<span style="float: right;">(28 Months) 07/2016 - 11/2018</span>
+				</div>
+				<ul class="work-experience__crewnet--content-1 content-text-big">
+					<li><i class="fas fa-check-circle"></i>Instrumental in migrating legacy .jsp’s into a modern SPA website built with AngularJS.</li>
+					<li><i class="fas fa-check-circle"></i>Formally recognized by a tech lead for volunteering to refactor CreweNet’s entire AngularJS code base into modules making it easier for other developers to navigate the file structure.</li>
+					<li><i class="fas fa-check-circle"></i>Produced the foundational code for the new workspace application built with AngularJS.</li>
+					<li><i class="fas fa-check-circle"></i>Facilitated the migration of the AngularJS code to React, Redux and Saga.</li>
+					<li><i class="fas fa-check-circle"></i>Looked upon as a JavaScript mentor to other new team members on the team.</li>
+				</ul>
+				<ul class="work-experience__crewnet--content-2 content-text-big">
+					<li><i class="fas fa-check-circle"></i>Facilitated the migration of the AngularJS code to React, Redux and Saga.</li>
+					<li><i class="fas fa-check-circle"></i>Looked upon as a JavaScript mentor to other new team members on the team.</li>
+					<li><i class="fas fa-check-circle"></i>Creating unit tests were required for all new features</li>
+					<li><i class="fas fa-check-circle"></i>Hosted bi-weekly learning sessions where developers can share, educate others and grow their skills.</li>
+					<li><i class="fas fa-check-circle"></i>Creating unit tests were required for all new features</li>
+					<li><i class="fas fa-check-circle"></i>Hosted bi-weekly learning sessions where developers can share, educate others and grow their skills.</li>
+				</ul>
+	            <div class="work-experience__tech-used-crewnet">Technologies Used</div>
+	            <div class="work-experience__tech-used-crewnet--container">
+	            	<div class="work-experience__tech-used-crewnet--item fab fa-angular"></div>
+					<span class="work-experience__tech-used-crewnet--text">AngularJS</span>
+	                <img class="work-experience__tech-used-crewnet--item" src="assets/images/jasmine.svg" alt="Jasmine logo"/>
+					<span class="work-experience__tech-used-crewnet--text">Jasmine</span>
+                    <img class="work-experience__tech-used-crewnet--item" src="assets/images/protractor.png" alt="Protractor logo"/>
+					<span class="work-experience__tech-used-crewnet--text">Protractor</span>
+                    <img class="work-experience__tech-used-crewnet--item" src="assets/images/cucumber.jpg" alt="Cucumber logo"/>
+					<span class="work-experience__tech-used-crewnet--text">Cucumber</span>
+	            	<div class="work-experience__tech-used-crewnet--item fab fa-java"></div>
+					<span class="work-experience__tech-used-crewnet--text">Java</span>
+	            	<div class="work-experience__tech-used-crewnet--item fab fa-atlassian"></div>
+					<span class="work-experience__tech-used-crewnet--text">Atlassian</span>
+	            	<div class="work-experience__tech-used-crewnet--item fas fa-universal-access"></div>
+					<span class="work-experience__tech-used-crewnet--text">Accessibility</span>
+	            </div>
+			</div>
+			<div class="work-experience__mse">
+				<div class="work-experience__mse--text heading-bar">Mission Solutions Engineering
+					<span style="float: right;">(13 Months) 06/2015 - 07/2016</span>
+				</div>
+				<ul class="work-experience__mse--content-1 content-text-big">
+					<li><i class="fas fa-check-circle"></i>Used Java to code, fix and test requirements through Junit and simulations.</li>
+					<li><i class="fas fa-check-circle"></i>Responsible for drawing UML diagrams based on requirements.</li>
+				</ul>
+				<ul class="work-experience__mse--content-2 content-text-big">
+					<li><i class="fas fa-check-circle"></i>Wrote life critical code.  Clean code, error and bug free code as well as logging any important information was a must.</li>
+				</ul>
+	            <div class="work-experience__tech-used-mse">Technologies Used</div>
+	            <div class="work-experience__tech-used-mse--container">
+	            	<div class="work-experience__tech-used-mse--item fab fa-java"></div>
+					<span class="work-experience__tech-used-mse--text">Java</span>
+	            </div>
+			</div>
+		</section>
+		<section id="projects" class="projects">
+			<div class="about__heading-box">
+				<div class="heading-primary">Projects</div>
+			</div>
+			<div class="projects__moment">
+				<div class="work-experience__mse--text heading-bar">Moment
+					<span style="float: right;">(Discontinued) 11/2016 - 02/2018</span>
+				</div>
+				<ul class="projects__moment--content-1 content-text-big">
+					<li><i class="fas fa-check-circle"></i>Large scale, solo, entrepreneurial project with about 10,000 lines of code, leveraging Ionic, AngularJS, and AWS S3.</li>
+					<li><i class="fas fa-check-circle"></i>Scalability and Efficiency was essential during the process.</li>
+					<li><i class="fas fa-check-circle"></i>Documentation of known bugs, architecture, issues and other considerations was imperative</li>
+
+				</ul>
+				<ul class="projects__moment--content-2 content-text-big">
+					<li><i class="fas fa-check-circle"></i>Strong attention to code smells, clean code and consistent refactoring was critical.</li>
+					<li><i class="fas fa-check-circle"></i>Gained indispensable knowledge on how to effectively architect code and data from a database.</li>
+				</ul>
+	            <div class="projects__tech-used-moment">Technologies Used</div>
+	            <div class="projects__tech-used-moment--container">
+	            	<div class="projects__tech-used-moment--item fab fa-angular"></div>
+					<span class="projects__tech-used-moment--text">AngularJS</span>
+	                <img class="projects__tech-used-moment--item" src="assets/images/ionic.jpg" alt="Ionic logo"/>
+					<span class="projects__tech-used-moment--text">Ionic Framework</span>
+					<img class="projects__tech-used-moment--item" src="assets/images/cordova.png" alt="Cordova logo"/>
+					<span class="projects__tech-used-moment--text">Cordova</span>
+	            	<div class="projects__tech-used-moment--item fas fa-globe-americas"></div>
+					<span class="projects__tech-used-moment--text">Geolocation</span>
+					<img class="projects__tech-used-moment--item" src="assets/images/onesignal.svg" alt="One Signal logo"/>
+					<span class="projects__tech-used-moment--text">OneSignal</span>
+	                <img class="projects__tech-used-moment--item" src="assets/images/s3.svg" alt="AWS S3 logo"/>
+					<span class="projects__tech-used-moment--text">AWS S3</span>
+	            </div>
+			</div>
+
+			<div class="projects__react-form">
+				<div class="work-experience__mse--text heading-bar">React Form
+					<span style="float: right;">04/2019</span>
+				</div>
+				<ul class="projects__react-form--content-1 content-text-big">
+					<li><i class="fas fa-check-circle"></i>React form application with registration, login and delete functionality.</li>
+					<li><i class="fas fa-check-circle"></i>Excellent representation of React and Redux expertise.</li>
+				</ul>
+				<ul class="projects__react-form--content-2 content-text-big">
+					<li><i class="fas fa-check-circle"></i>Code correctly modulated with React best practices in mind.</li>		
+				</ul>
+
+	            <div class="projects__tech-used-react-form">Technologies Used</div>
+	            <div class="projects__tech-used-react-form--container">
+					<i class="projects__tech-used-react-form--item fab fa-react"></i>
+					<span class="projects__tech-used-react-form--text">ReactJS</span>
+	                <img class="projects__tech-used-react-form--item" src="assets/images/redux.svg" alt="Redux logo"/>
+					<span class="projects__tech-used-react-form--text">Redux</span>
+	            </div>
+			</div>
+
+			<div class="projects__portfolio">
+				<div class="work-experience__mse--text heading-bar">Portfolio
+					<span style="float: right;">04/2019</span>
+				</div>
+				<ul class="projects__portfolio--content-1 content-text-big">
+					<li><i class="fas fa-check-circle"></i>This porfolio website was created with pure HTML and SASS with NO CSS libraries.</li>
+					<li><i class="fas fa-check-circle"></i>Used modern CSS3 grid layout with BEM naming convention.</li>
+				</ul>
+				<ul class="projects__portfolio--content-2 content-text-big">
+					<li><i class="fas fa-check-circle"></i>All code is compiled, prefixed and compressed to ensure efficiency.</li>
+					<li><i class="fas fa-check-circle"></i>Great use of SASS mixins to make code DRY and modular.</li>
+					<li><i class="fas fa-check-circle"></i>SVG icons are used where possible to ensure quality user experience</li>
+				</ul>
+	            <div class="projects__tech-used-portfolio">Technologies Used</div>
+	            <div class="projects__tech-used-portfolio--container">
+					<i class="projects__tech-used-portfolio--item fab fa-html5"></i>
+					<span class="projects__tech-used-portfolio--text">HTML5</span>
+					<i class="projects__tech-used-portfolio--item fab fa-css3-alt"></i>
+					<span class="projects__tech-used-portfolio--text">CSS3</span>
+					<i class="projects__tech-used-portfolio--item fab fa-sass"></i>
+					<span class="projects__tech-used-portfolio--text">SASS</span>
+	            </div>
+			</div>
+		</section>
+		<section class="contact">
+			<div class="about__heading-box">
+				<div class="heading-primary spacing-bottom-large">Ready to take it to the next level?</div>				
+			</div>	
+			<div class="book">
+				<div class="book__form">	
+				    <form class="form">
+				    	<label class="heading-secondary spacing-bottom-large">How can I help?</label>
+				        <input type="hidden" name="contact_number">
+				        <div class="form__group spacing-bottom-medium">
+					        <label class="form__label spacing-bottom-small content-text-big">Name</label>
+					        <input type="text" class="form__input" name="user_name" required>
+				        </div>
+				        <div class="form__group spacing-bottom-medium">
+					        <label class="form__label spacing-bottom-small content-text-big">Email</label>
+					        <input type="email" class="form__input" name="user_email" required>
+				        </div>
+				        <div class="form__group spacing-bottom-medium">
+					        <label class="form__label spacing-bottom-small content-text-big">Message</label>
+					        <textarea name="text" class="form__input" required></textarea>
+				        </div>
+				        <div class="form__group">
+					        <button class="btn" type="submit" value="Send">Send</button>
+				        </div>
+				    </form>
+			    </div>
+		    </div>
+		</section> 
+		<footer class="footer">
+			<span class="footer__about content-text-big"><a class="footer__link" href="#about">About</a></span>
+			<span class="footer__skills content-text-big"><a class="footer__link" href="#skills">Skills</a></span>
+			<span class="footer__work-experience content-text-big"><a class="footer__link" href="#work-experience">Work Experience</a></span>
+			<span class="footer__projects content-text-big"><a class="footer__link" href="#projects">Projects</a></span>
+			
+		</footer>
+		<section class="blog">BLOG</section>
+		 
+	</body> 

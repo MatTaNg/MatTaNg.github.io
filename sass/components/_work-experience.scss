@@ -1,0 +1,34 @@
+.work-experience {
+	grid-column: full-start / full-end;
+
+	display: grid;
+    grid-template-rows: 40vh repeat(3, min-content);
+	grid-template-columns: 1fr 60vw 1fr;
+    grid-row-gap: 10rem;
+    background-color: lightgrey;
+
+    padding-bottom: 10rem; 
+
+    &__vui {
+        @include create-box(2, 6);
+    }
+
+    &__crewnet {
+        @include create-box(3, 6);
+    }
+
+    &__mse {
+        @include create-box(4, 6);
+        
+    }
+
+    &__tech-used-vui {
+        @include tech-used(4);
+    }
+    &__tech-used-crewnet {
+        @include tech-used(7);
+    }
+    &__tech-used-mse {
+        @include tech-used(1);
+    }
+} 

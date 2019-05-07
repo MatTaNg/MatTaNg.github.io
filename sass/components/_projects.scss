@@ -1,0 +1,31 @@
+.projects {
+	grid-column: full-start / full-end;
+	background-color: lightgrey;
+
+	display: grid;
+    grid-template-rows: 40vh repeat(4, min-content);
+    grid-row-gap: 10rem;
+	grid-template-columns: 1fr 60vw 1fr;
+
+	&__moment {
+		@include create-box(2, 6);
+	}
+
+	&__react-form {
+		@include create-box(3, 2);
+	}
+
+	&__portfolio {
+		@include create-box(4, 3);
+	}
+
+	&__tech-used-moment {
+		@include tech-used(6);
+	}
+	&__tech-used-react-form {
+		@include tech-used(2);
+	}
+	&__tech-used-portfolio {
+		@include tech-used(3);
+	}
+}

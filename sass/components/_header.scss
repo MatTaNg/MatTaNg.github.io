@@ -1,0 +1,32 @@
+.header {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.5),
+        rgba($color-primary-dark, 0.5)),
+    url(../../assets/header-image.jpg);
+	background-size: cover;
+	grid-column: full-start / full-end;	
+	text-align: center;
+	
+	display:grid;
+	grid-template-rows: 1fr 20vh 20vh 1fr;
+	grid-template-columns: 1fr minmax(30vw, min-content) 1fr;
+}
+ 
+.header__image {
+	border-radius: 100rem;
+	height: 30rem; 
+	width: 30rem;
+
+	grid-column: 2 / 3;
+	grid-row: 2 / 3;  
+	justify-self: center;
+}
+
+.header__text {
+	grid-row: 4 / 5;
+	grid-column: 2 / 3;
+	justify-self: center;
+	font-size: 3rem;
+	color: white;
+}
