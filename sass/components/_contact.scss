@@ -13,6 +13,7 @@
                     rgba($color-primary-light, .9) 50%, //At 50% we want white again.  This will essentially be white from 0 to 50%
                     transparent 50%) , //Then after 50% we want the color to dissapear.
                     url(../../assets/images/contact.jpg);
+    background-repeat: round; 
     background-size: 100%;
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba(#000, .2);
