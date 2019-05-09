@@ -5,28 +5,38 @@
 	
 	display: grid;
 	grid-template-rows: 10rem min-content 10rem;
-	grid-template-columns: 30rem repeat(4, 1fr) 30rem;
+	grid-template-columns: 10rem repeat(6, 1fr) 10rem;
 	align-items: center;
 	justify-items: center;
 
-	&__about {
+	&__home {
 		grid-row: 2 / 3;
 		grid-column: 2 / 3;
 	}
 
-	&__skills {
+	&__about {
 		grid-row: 2 / 3;
 		grid-column: 3 / 4;
 	}
 
-	&__work-experience {
+	&__skills {
 		grid-row: 2 / 3;
 		grid-column: 4 / 5;
 	}
 
-	&__projects {
+	&__work-experience {
 		grid-row: 2 / 3;
 		grid-column: 5 / 6;
+	}
+
+	&__projects {
+		grid-row: 2 / 3;
+		grid-column: 6 / 7;
+	}
+
+	&__contact {
+		grid-row: 2 / 3;
+		grid-column: 7 / 8;
 	}
 
 	&__link {

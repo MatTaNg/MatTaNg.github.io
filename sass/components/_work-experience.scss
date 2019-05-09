@@ -10,15 +10,15 @@
     padding-bottom: 10rem; 
 
     &__vui {
-        @include create-box(2, 6);
+        @include create-box(2);
     }
 
     &__crewnet {
-        @include create-box(3, 6);
+        @include create-box(3);
     }
 
     &__mse {
-        @include create-box(4, 6);
+        @include create-box(4);
         
     }
 

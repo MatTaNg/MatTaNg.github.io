@@ -9,8 +9,10 @@
 	text-align: center;
 	
 	display:grid;
-	grid-template-rows: 1fr 20vh 20vh 1fr;
+	grid-template-rows: 1fr min-content min-content 1fr;
 	grid-template-columns: 1fr minmax(30vw, min-content) 1fr;
+
+	row-gap: 1rem;
 }
  
 .header__image {

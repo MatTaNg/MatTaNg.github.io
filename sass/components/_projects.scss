@@ -8,15 +8,15 @@
 	grid-template-columns: 1fr 60vw 1fr;
 
 	&__moment {
-		@include create-box(2, 6);
+		@include create-box(2);
 	}
 
 	&__react-form {
-		@include create-box(3, 2);
+		@include create-box(3);
 	}
 
 	&__portfolio {
-		@include create-box(4, 3);
+		@include create-box(4);
 	}
 
 	&__tech-used-moment {

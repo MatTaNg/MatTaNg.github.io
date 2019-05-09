@@ -21,13 +21,14 @@
                 event.preventDefault();
                 this.contact_number.value = Math.random() * 100000 | 0;
                 emailjs.sendForm('portfolio', 'portfolio_form', this);
-                document.getElementsByClassName('form')[0].reset();                
+                document.getElementsByClassName('form')[0].reset();            
+                alert("Email recieved!");
             });
         }
 	    </script>
 	</head>
 	<body class="container">
-		<header class="header">
+		<header class="header" id="home">
 			<img src="./assets/headshot.jpg" alt="headshot image" class="header__image"/>
 			<p class="header__text">Font End Web Developer with deep JavaScript knowledge who specializes in React with a passion for coding!</p>
 		</header>
@@ -178,7 +179,7 @@
 			</div>
 
 			<div class="work-experience__vui">
-				<div class="work-experience__crewnet--text heading-bar">Vanguard - Vanguard User Interface
+				<div class="work-experience__vui--text heading-bar">Vanguard - Vanguard User Interface
 					<span style="float: right;">(4 Months) 11/2019 - 3/2019</span>
 				</div>
 				<ul class="work-experience__vui--content-1 content-text-big">
@@ -335,7 +336,7 @@
 	            </div>
 			</div>
 		</section>
-		<section class="contact">
+		<section class="contact" id="contact">
 			<div class="about__heading-box">
 				<div class="heading-primary spacing-bottom-large">Ready to take it to the next level?</div>				
 			</div>	
@@ -371,12 +372,12 @@
 		    </div>
 		</section> 
 		<footer class="footer">
+			<span class="footer__home content-text-big"><a class="footer__link" href="#home">Home</a></span>
 			<span class="footer__about content-text-big"><a class="footer__link" href="#about">About</a></span>
 			<span class="footer__skills content-text-big"><a class="footer__link" href="#skills">Skills</a></span>
 			<span class="footer__work-experience content-text-big"><a class="footer__link" href="#work-experience">Work Experience</a></span>
 			<span class="footer__projects content-text-big"><a class="footer__link" href="#projects">Projects</a></span>
+			<span class="footer__contact content-text-big"><a class="footer__link" href="#contact">Contact</a></span>
 			
-		</footer>
-		<section class="blog">BLOG</section>
-		 
+		</footer>		 
 	</body> 
