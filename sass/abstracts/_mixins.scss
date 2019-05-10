@@ -10,35 +10,73 @@
     grid-template-columns: 50% 50%;
     grid-template-rows: min-content min-content min-content;
 
+    @include respond(tab-land) {
+        grid-template-rows: min-content min-content min-content min-content;
+        grid-template-columns: 100%;
+    }
+
         &--text {
         	grid-column: 1 / 3;
+
+            @include respond(phone) {
+                font-size: 1.5rem;
+            }
+            
 	    }
+        &--title {
+            @media only screen and (max-width: 62.5em) { 
+                display:block;
+            };
+        }
+
+        &--date {
+            float: right;
+            
+            @media only screen and (max-width: 62.5em) { 
+                float: left;
+            };
+
+        }
+
 	    &--content-1 {
 	        padding: 1rem;
 	        grid-row: 2 / 3;
 	        grid-column: 1 / 2;
+            @include respond(tab-port) {
+                padding: 0;
+                padding-left: 1rem;
+            }
 	    }
 	    &--content-2 {
 	        padding: 1rem;
 	        grid-row: 2 / 3;
 	        grid-column: 2 / 3;
+            @include respond(tab-land) {
+                padding: 0rem;
+                padding-left: 1rem;
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+            }
 	    }
 }
 
 @mixin tech-used($numTech) { 
     grid-row: 3 / 4;
+    @include respond(tab-land) {
+       grid-row: 4 / 5;
+    }
+ 
     grid-column: 1 / 7;
 
     display: grid; 
     grid-template-columns: 1fr max-content 1fr;
-    grid-column-gap: 1.5rem;
     align-items: center;
 
     font-size: 1.6rem;
     color: grey;
 
     &::before,
-    &::after {
+    &::after { 
         content: "";
         height: 1px;
         display: block;
@@ -51,31 +89,32 @@
 
         display: grid;
         grid-template-columns: repeat($numTech, 1fr);
-        grid-template-rows: 10rem min-content;
-        grid-row-gap: 1rem;
-        grid-column-gap: 3rem;
+        grid-template-rows: min-content min-content; 
         justify-items: center;
         align-items: center;
-        padding-top: 3rem;
+        padding-top: 1rem;
     }
-
+ 
     &--item {
         grid-row: 1 / 2;
-        font-size: 10rem;
-        height: 10rem;
-        width: 8rem;
+        font-size: 5vw;
+        height: 5vw;
+        width: 4vw;
 
         align-self: center;
         justify-self: center;
     }
 
-    &--text {
-        font-size: 1.5rem;
+    &--text {        
         grid-row: 2 /3;
         justify-self: center;
         align-self: center;
+
+        @extend .content-text;
     }
 }
+
+
 
 /*
 Media Queries
@@ -84,13 +123,13 @@ Media Queries
 
 @mixin respond($breakpoint) {
     @if $breakpoint == phone {
-        @media only screen and (max-width: 37.5em) { @content };    //600px - We cant use pixels because if a user changes the font size it would not work.
+        @media only screen and (max-width: 31.25em) { @content };    //500px - We cant use pixels because if a user changes the font size it would not work.
     }
     @if $breakpoint == tab-port {
-        @media only screen and (max-width: 56.25em) { @content };     //900px - The only screen attribute makes the media queries only apply to screen and wont be applied if it is printed out for example.
+        @media only screen and (max-width: 50em) { @content };     //800px - The only screen attribute makes the media queries only apply to screen and wont be applied if it is printed out for example.
     }
     @if $breakpoint == tab-land {
-        @media only screen and (max-width: 81.25em) { @content };    //1300px
+        @media only screen and (max-width: 75em) { @content };    //1200px
     }
     @if $breakpoint == big-desktop {
         @media only screen and (min-width: 112.5em) { @content };    //1800

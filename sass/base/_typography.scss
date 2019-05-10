@@ -6,10 +6,26 @@
 }
 .content-text {
 	font-size: 1.5rem;
+
+    @include respond(tab-port) {
+        font-size: 1rem;
+    }
+    @include respond(phone) {
+        font-size: 0.5rem;
+    }
 }
 .content-text-big { 
 	font-size: 2rem;
 	line-height: 3.5rem;
+
+    @include respond(tab-port) {
+        line-height: 2.5rem;    
+        font-size: 1.5rem;
+    }
+    @include respond(phone) {
+        line-height: 1.5rem;    
+        font-size: 1rem;
+    }
 }
 .heading-banner {
 	display: block;
