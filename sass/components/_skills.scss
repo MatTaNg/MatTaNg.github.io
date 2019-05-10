@@ -6,9 +6,9 @@
 	display: grid;
     grid-template-rows: 40vh repeat(5, min-content);
 	grid-template-columns: 1fr minmax(80, 15vw) 1fr;
-    grid-column-gap: 10px;
+    grid-column-gap: 10rem;
     grid-row-gap: 10rem;
-    padding-bottom: 10rem;
+    padding-bottom: 8vw;
 
 	&__languages {
 		grid-column: 2 / 6;
@@ -19,7 +19,7 @@
 		display: grid;
 		grid-template-columns: repeat(5, 20%); 
 		grid-template-rows: min-content min-content min-content;
-		grid-row-gap: 2rem;
+		grid-row-gap: 1vw;
 	}
 
 	&__title {
@@ -28,19 +28,20 @@
 
 	&__icon {
 		grid-row: 2 / 3;
-		font-size: 10rem;
-		height: 8rem;
-		width: 8rem;
+		font-size: 6vw;
+		height: 6vw;
+		width: 6vw;
 
 		align-self: center;
 		justify-self: center;
 
 		&-text {
-			font-size: 1.5rem;
 			grid-row: 3 /4;
 			padding: 1rem;
 			justify-self: center;
 			align-self: center;
+
+			@extend .content-text;
 		}
 	}
 

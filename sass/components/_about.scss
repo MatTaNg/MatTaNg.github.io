@@ -12,17 +12,28 @@
 
 .about { 
 	grid-column: full-start / full-end;
-
 	display: grid;
-	grid-template-rows: min-content 10vh min-content minmax(15rem, min-content) min-content 10vh [bio-start] repeat(5, [bio] min-content) [bio-end];
-	grid-template-columns: 1fr repeat(4, minmax(30rem, min-content)) 1fr;  
+	grid-template-rows: min-content 10vw min-content minmax(15rem, min-content) min-content 10vh [bio-start] repeat(5, [bio] min-content) [bio-end];
+	grid-template-columns: 1fr repeat(4, minmax(15vw, min-content)) 1fr;  		
 
 	@include respond(tab-land) {
 		grid-template-columns: 1fr repeat(4, minmax(20vw, min-content)) 1fr;  		
 	}
+	@include respond(tab-port) {
+
+	}
+    @media only screen and (max-width: 62.5em) { 
+		grid-template-rows: min-content 10vw min-content min-content min-content min-content 10vw min-content 10vw [bio-start] repeat(5, [bio] min-content) [bio-end];
+		grid-template-columns: 10vw repeat(4, minmax(1fr, min-content)) 10vw;  		
+    };
+  //   @include respond(tab-port) {
+		// grid-template-rows: min-content 10vw min-content minmax(15rem, min-content) min-content min-content 10vw min-content 10vw [bio-start] min-content min-content [bio-end] [skills-start] repeat(6, [skills] min-content) [skills-end];
+  //   }
+
+
 	grid-column-gap: 1rem;
 
-	&__heading-box {
+	&__heading-box { 
 		display: flex;
 		align-items: center;
 		justify-content: center;	
@@ -39,6 +50,14 @@
 		grid-column: 2 / 3;
 		fill: $color-primary-light;
 
+	    @media only screen and (max-width: 62.5em) { 			
+			grid-column: 2 / 4;
+		}
+		@include respond(tab-land) {
+			width: 8rem;
+			height: 8rem;	
+		}
+
 		&--text {
 			align-self: center;
 			justify-self: center;
@@ -46,33 +65,65 @@
 			grid-row: 4 / 5;			
 			font-size: 1.5rem;
 			grid-column: 2 / 3;	
+
+		    @media only screen and (max-width: 62.5em) { 			
+				grid-column: 2 / 4;
+			}
 		}
 	}
 	&__icons-laptop {
 		@extend .about__icons-bolt;
 		grid-column: 3 / 4;
 
+	    @media only screen and (max-width: 62.5em) { 			
+			grid-column: 4 / 6;
+		}
+
 		&--text {		
 			@extend .about__icons-bolt--text;
 			grid-column: 3 / 4;		
+
+		    @media only screen and (max-width: 62.5em) { 			
+				grid-column: 4 / 6;
+			}
 		}
 	}
 	&__icons-chart {
 		@extend .about__icons-bolt;
 		grid-column: 4 / 5;
 
+	    @media only screen and (max-width: 62.5em) { 			
+			grid-row: 6 / 7;
+			grid-column: 2 / 4;
+		}
+
 		&--text {		
-			@extend .about__icons-bolt--text;
-			grid-column: 4 / 5;		
+			@extend .about__icons-bolt--text;			
+			grid-column: 4 / 5;
+
+			@media only screen and (max-width: 62.5em) { 	
+    			grid-row: 7 / 8;
+				grid-column: 2 / 4;		
+			}
 		}
 	}
 	&__icons-wrench {
 		@extend .about__icons-bolt;
 		grid-column: 5 / 6;
 
+	    @media only screen and (max-width: 62.5em) { 			
+			grid-row: 6 / 7;
+			grid-column: 4 / 6;
+		}
+
 		&--text {		
 			@extend .about__icons-bolt--text;
-			grid-column: 5 / 6;	
+			grid-column: 5 / 6;
+
+		    @media only screen and (max-width: 62.5em) { 			
+    			grid-row: 7 / 8;
+				grid-column: 4 / 6;	
+			}
 		}
 	}
 
@@ -90,13 +141,26 @@
 			width: 20rem;
 			height: 20rem; 
 			border-radius: 1000px; 
+		
+		 //    @include respond(tab-port) {
+			// 	grid-column: 2 / 4;
+			// }
 		}
 
 		&--text {
-			text-align: center; 
+			text-align: center;  
 			font-size: 1.5rem;
 			margin-left: 10rem;
 			margin-right: 10rem;
+
+	        @media only screen and (max-width: 62.5em) { 
+				margin-left: 0rem;
+				margin-right: 0rem;			
+	        };
+
+		 //    @include respond(tab-port) {
+			// 	grid-column: 4 / 6;
+			// }
 		}
 	}
 
@@ -107,6 +171,10 @@
 
 		display: grid;
 		justify-items: space-around; 
+
+        // @include respond(phone) {
+        // 	grid-row: skills-start / skills-end;
+        // }
 
 		&--text { 
 			padding: 1rem; 
@@ -123,8 +191,7 @@
 		}
 
 		&--javascript-bar {
-			@include fillbar($skill-1);			
-	            
+			@include fillbar($skill-1);				            
 		}
 
 		&--angularjs-bar {

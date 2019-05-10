@@ -9,6 +9,12 @@
 	align-items: center;
 	justify-items: center;
 
+    @media only screen and (max-width: 62.5em) { 
+		grid-template-rows: 10rem min-content min-content 10rem;
+		grid-template-columns: 10rem repeat(3, 1fr) 10rem;
+     };    
+
+
 	&__home {
 		grid-row: 2 / 3;
 		grid-column: 2 / 3;
@@ -17,6 +23,7 @@
 	&__about {
 		grid-row: 2 / 3;
 		grid-column: 3 / 4;
+
 	}
 
 	&__skills {
@@ -37,6 +44,21 @@
 	&__contact {
 		grid-row: 2 / 3;
 		grid-column: 7 / 8;
+	}
+
+	@media only screen and (max-width: 62.5em) { 
+		&__work-experience, &__projects, &__contact {
+			grid-row: 3/ 4;
+		}
+		&__work-experience {
+			grid-column: 2 / 3;
+		}
+		&__projects {
+			grid-column: 3 / 4;
+		}
+		&__contact{
+			grid-column: 4 / 5;
+		}
 	}
 
 	&__link {

@@ -1,8 +1,16 @@
 .heading-primary {
 	font-size: 5rem;
+
+    @include respond(tab-port) {
+        font-size: 4rem;
+    }
 }
 .heading-secondary {
 	font-size: 3rem;
+
+    @include respond(tab-port) {
+        font-size: 2rem;
+    }
 }
 .content-text {
 	font-size: 1.5rem;
@@ -11,7 +19,7 @@
         font-size: 1rem;
     }
     @include respond(phone) {
-        font-size: 0.5rem;
+        font-size: 1rem;
     }
 }
 .content-text-big { 
