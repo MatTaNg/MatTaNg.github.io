@@ -70,7 +70,11 @@
 					<img class="about__biography--image" src="./assets/headshot.jpg" alt="headshot"/>
 					<p class="about__biography--text content-text">It's Matt!  I am passionate about writing beautiful JavaScript code which is maintainable, readable, testable and scaleable.  I love to keep up to date with the latest JavaScript news and create stunning applications which offer solutions to problems!</p>
 				</div>
-
+<!--
+	How to update these skills:
+	1.  Go to variables.scss and find the skill you want to update (look at _about.scss to see how the CSS uses the variabless)
+	2.  Change the text below corresponding to your update in the CSS so that it matches
+-->
 				<div class="about__skills heading-secondary">
 					<div class="about__skills-container">
 						<div class="about__skills--text">JavaScript</div>
@@ -79,28 +83,28 @@
 						<div class="about__skills--percent">80%</div>
 					</div>
 					<div class="about__skills-container">
-						<div class="about__skills--text">AngularJS</div>
+						<div class="about__skills--text">MobX</div>
 						<div class="about__skills--angularjs-bar">
 						</div>
 						<div class="about__skills--percent">70%</div>
 					</div>
 					<div class="about__skills-container">
-						<div class="about__skills--text">React-Redux</div>
+						<div class="about__skills--text">React</div>
 						<div class="about__skills--react-redux-bar">
 						</div>
-						<div class="about__skills--percent">60%</div>
+						<div class="about__skills--percent">90%</div>
 					</div>
 					<div class="about__skills-container">
 						<div class="about__skills--text">HTML5</div>
 						<div class="about__skills--html-bar">
 						</div>
-						<div class="about__skills--percent">80%</div>
+						<div class="about__skills--percent">90%</div>
 					</div>
 					<div class="about__skills-container">
 						<div class="about__skills--text">CSS3</div>
 						<div class="about__skills--css-bar">
 						</div>
-						<div class="about__skills--percent">65%</div>
+						<div class="about__skills--percent">80%</div>
 					</div>
 					<div class="about__skills-container">
 						<div class="about__skills--text">Sculpted Abs</div>
@@ -136,6 +140,10 @@
 				<span class="skills__icon-text">ReactJS</span>
                 <img class="skills__icon" src="assets/images/redux.svg" alt="Redux logo"/>
 				<span class="skills__icon-text">Redux</span>			
+				<img class="skills__icon" src="assets/images/mobX.png" alt="MobX logo"/>
+				<span class="skills__icon-text">MobX</span>
+				<img class="skills__icon" src="assets\images/typsScript.jpeg" alt="TypeScript logo"/>
+				<span class="skills__icon-text">TypeScript</span>
 			</div>
 			<div class="skills__testing">
 				<div class="skills__title heading-bar">Testing</div>
@@ -158,8 +166,8 @@
 				<span class="skills__icon-text">Bamboo</span>
 				<i class="skills__icon fab fa-github"></i>
 				<span class="skills__icon-text">Git</span>
-				<i class="skills__icon fab fa-jenkins"></i>
-				<span class="skills__icon-text">Jenkins</span>
+				<img class="skills__icon" src="assets/images/GitLab_Logo.svg.png" alt="Gitlab logo"/>
+				<span class="skills__icon-text">GitLab</span>
 			</div>
 			<div class="skills__other">
 				<div class="skills__title heading-secondary heading-bar">Other</div>
@@ -173,9 +181,41 @@
 				<span class="skills__icon-text">ToastMaster</span>
 			</div>
 		</section>
+			<!--How to add work experience:
+			1.  copy and paste the HTML of an existing box (like vanguard)
+			2.  Change the content.
+			3.  Change the CSS classes to use the new company and make new CSS classes in __work-experience
+		-->
 		<section class="work-experience">
 			<div class="about__heading-box">
 				<div class="heading-primary">WORK EXPERIENCE</div>
+			</div>
+			<div class="work-experience__goldman">
+				<div class="work-experience__goldman--text heading-bar">
+					<span class="work-experience__goldman--title">Rightpoint - Goldman Sachs</span>
+					<span class="work-experience__goldman--date">06/2019 - Present</span>
+				</div>
+				<ul class="work-experience__goldman--content-1 content-text-big">
+					<li><i class="fas fa-check-circle"></i>Built the Client Service Portal (CSP) from the ground up with a team of developers which allows an OPs team to submit and transfer payments</li>					
+					<li><i class="fas fa-check-circle"></i>Fixed bugs and introduced new features to a client facing website known as Client User Experience (CX) which allows clients to create tasks, submit, view or transfer payments</li>
+				</ul>
+				<ul class="work-experience__goldman--content-2 content-text-big">
+					<li><i class="fas fa-check-circle"></i>Called out and created tasks for code smells, bad testing and refactoring needs</li>
+					<li><i class="fas fa-check-circle"></i>Created an entire entitlements flow from scratch where a user can change or view a users entitlements</li>
+				</ul>
+	            <div class="work-experience__tech-used-goldman">Technologies Used</div>
+	            <div class="work-experience__tech-used-goldman--container">
+	            	<i class="projects__tech-used-react-form--item fab fa-react"></i>
+					<span class="projects__tech-used-react-form--text">ReactJS</span>
+	                <img class="work-experience__tech-used-goldman--item" src="assets/images/jasmine.svg" alt="Jasmine logo"/>
+					<span class="work-experience__tech-used-goldman--text">Jasmine</span>
+	            	<img class="work-experience__tech-used-goldman--item" src="assets/images/mobX.png" alt="MobX logo"/>
+					<span class="work-experience__tech-used-goldman--text">MobX</span>
+					<img class="work-experience__tech-used-goldman--item" src="assets/images/GitLab_Logo.svg.png" alt="Gitlab logo"/>
+					<span class="work-experience__tech-used-goldman--text">GitLab</span>
+					<img class="work-experience__tech-used-goldman--item" src="assets/images/typsScript.jpeg" alt="TypeScript logo"/>
+					<span class="work-experience__tech-used-goldman--text">TypeScript</span>
+	            </div>
 			</div>
 
 			<div class="work-experience__vui">
@@ -298,7 +338,7 @@
 			<div class="projects__react-form">
 				<div class="projects__react-form--text heading-bar">
 					<span class="projects__react-form--title">React Form</span>
-					<span class="projects__react-form--date">04/2019</span>
+					<span class="projects__react-form--date">(Discontinued) 04/2019</span>
 				</div>
 				<ul class="projects__react-form--content-1 content-text-big">
 					<li><i class="fas fa-check-circle"></i>React form application with registration, login and delete functionality.</li>
