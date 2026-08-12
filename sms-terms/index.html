@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amoraea — SMS Terms & Consent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2A41;
+    --ink-2:#2C4360;
+    --gold:#C99A3E;
+    --gold-dark:#8C6A26;
+    --paper:#FBF9F5;
+    --paper-2:#F3EFE6;
+    --line:#E3DECF;
+    --text:#26221B;
+    --text-soft:#5B5648;
+    --text-faint:#8A8474;
+    --danger-bg:#FBEAEA;
+    --danger-text:#8C2F2F;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  h1,h2,h3{font-family:'Newsreader',serif;font-weight:500;color:var(--ink);margin:0;}
+  .placeholder{
+    background:#FDF3DC;
+    border:1px dashed var(--gold-dark);
+    color:#6B4F14;
+    padding:1px 6px;
+    border-radius:4px;
+    font-size:0.92em;
+    font-style:normal;
+  }
+
+  /* top bar */
+  .topbar{
+    background:var(--ink);
+    padding:20px 0;
+  }
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;}
+  .brand{
+    font-family:'Newsreader',serif;
+    font-style:italic;
+    font-size:22px;
+    color:var(--paper);
+    letter-spacing:0.02em;
+  }
+  .brand-tag{
+    color:var(--gold);
+    font-family:'Inter',sans-serif;
+    font-style:normal;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+    border:1px solid rgba(201,154,62,0.5);
+    padding:4px 10px;
+    border-radius:20px;
+  }
+
+  /* hero */
+  .hero{
+    background:var(--ink);
+    background:linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+    padding:56px 0 64px;
+  }
+  .hero h1{
+    color:var(--paper);
+    font-size:38px;
+    line-height:1.2;
+    max-width:520px;
+  }
+  .hero p{
+    color:#CBD5E1;
+    font-size:16px;
+    max-width:480px;
+    margin-top:14px;
+  }
+  .hero-rule{
+    width:56px;height:2px;background:var(--gold);
+    margin-bottom:20px;
+  }
+
+  section{padding:48px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .eyebrow{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+    color:var(--gold-dark);
+    font-weight:600;
+    margin-bottom:10px;
+  }
+  section h2{font-size:24px;margin-bottom:16px;}
+  section p{font-size:15.5px;color:var(--text-soft);max-width:620px;}
+
+  /* business info card */
+  .info-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px 32px;
+    margin-top:20px;
+  }
+  .info-item dt{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--text-faint);
+    margin-bottom:4px;
+  }
+  .info-item dd{
+    margin:0;
+    font-size:15.5px;
+    color:var(--text);
+    font-weight:500;
+  }
+
+  /* opt-in section: mockup + description side by side */
+  .optin-layout{
+    display:grid;
+    grid-template-columns:240px 1fr;
+    gap:40px;
+    align-items:start;
+    margin-top:24px;
+  }
+  .phone{
+    background:var(--ink);
+    border-radius:28px;
+    padding:12px;
+    box-shadow:0 12px 32px rgba(27,42,65,0.18);
+  }
+  .phone-screen{
+    background:#fff;
+    border-radius:18px;
+    padding:18px 16px 20px;
+    min-height:360px;
+  }
+  .phone-notch{
+    width:60px;height:5px;background:rgba(255,255,255,0.25);
+    border-radius:4px;margin:0 auto 14px;
+  }
+  .app-header{
+    display:flex;align-items:center;gap:8px;margin-bottom:16px;
+  }
+  .app-header .dot{
+    width:26px;height:26px;border-radius:50%;
+    background:var(--ink);color:var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Newsreader',serif;font-style:italic;font-size:13px;
+  }
+  .app-header span{font-size:13px;font-weight:600;color:var(--ink);}
+  .phone-screen h4{
+    font-family:'Newsreader',serif;font-weight:500;font-size:16px;
+    margin:0 0 10px;color:var(--ink);
+  }
+  .phone-screen .consent-copy{
+    font-size:11.5px;
+    color:var(--text-soft);
+    line-height:1.5;
+    background:var(--paper-2);
+    border-radius:10px;
+    padding:10px 12px;
+    margin-bottom:14px;
+  }
+  .toggle-row{
+    display:flex;align-items:flex-start;gap:10px;
+    margin-bottom:16px;
+  }
+  .checkbox{
+    width:18px;height:18px;border-radius:5px;
+    border:1.5px solid var(--gold);
+    background:var(--gold);
+    flex-shrink:0;margin-top:1px;
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:12px;
+  }
+  .toggle-row p{margin:0;font-size:11.5px;color:var(--text);line-height:1.5;}
+  .fake-btn{
+    background:var(--ink);color:var(--paper);
+    text-align:center;font-size:13px;font-weight:600;
+    padding:10px;border-radius:10px;
+  }
+  .optin-desc h3{font-size:17px;margin-bottom:10px;}
+  .optin-desc p{font-size:15px;color:var(--text-soft);margin-bottom:14px;}
+  .optin-desc ol{
+    margin:0;padding-left:20px;color:var(--text-soft);font-size:15px;
+  }
+  .optin-desc li{margin-bottom:8px;}
+
+  /* consent language box */
+  .consent-box{
+    background:var(--paper-2);
+    border-left:3px solid var(--gold);
+    padding:20px 24px;
+    margin-top:18px;
+    font-family:'Newsreader',serif;
+    font-style:italic;
+    font-size:16px;
+    color:var(--ink);
+    line-height:1.6;
+  }
+
+  /* program details */
+  .details-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:20px;
+  }
+  .detail-card{
+    background:var(--paper-2);
+    border-radius:12px;
+    padding:18px;
+  }
+  .detail-card .label{
+    font-size:12px;text-transform:uppercase;letter-spacing:0.06em;
+    color:var(--text-faint);margin-bottom:6px;
+  }
+  .detail-card .value{font-size:14.5px;font-weight:500;color:var(--ink);}
+
+  .stop-help{
+    display:flex;gap:16px;margin-top:20px;flex-wrap:wrap;
+  }
+  .stop-help .card{
+    flex:1;min-width:220px;
+    background:#fff;border:1px solid var(--line);
+    border-radius:12px;padding:16px 18px;
+  }
+  .stop-help .card .kw{
+    font-family:'Newsreader',serif;font-style:italic;font-size:18px;
+    color:var(--gold-dark);margin-bottom:4px;
+  }
+  .stop-help .card p{margin:0;font-size:14px;color:var(--text-soft);}
+
+  .disclaimer{
+    background:var(--danger-bg);
+    color:var(--danger-text);
+    font-size:13.5px;
+    padding:14px 18px;
+    border-radius:10px;
+    margin-top:20px;
+  }
+
+  /* links */
+  .link-row{display:flex;gap:24px;flex-wrap:wrap;margin-top:16px;}
+  .link-row a{
+    color:var(--ink);font-weight:600;font-size:15px;
+    text-decoration:none;border-bottom:1px solid var(--gold);
+    padding-bottom:2px;
+  }
+
+  footer{
+    background:var(--ink);
+    color:#9AA9BE;
+    padding:32px 0;
+    font-size:13px;
+  }
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+
+  @media (max-width:640px){
+    .optin-layout{grid-template-columns:1fr;}
+    .info-grid{grid-template-columns:1fr;}
+    .details-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:30px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">Amoraea</div>
+    <div class="brand-tag">SMS program</div>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-rule"></div>
+    <h1>SMS terms &amp; consent</h1>
+    <p>This page documents how Amoraea users opt in to receive text messages, what they receive, and how to stop at any time.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Business information</div>
+    <h2>Who's sending these messages</h2>
+    <dl class="info-grid">
+      <div class="info-item">
+        <dt>Legal business name</dt>
+        <dd><span class="placeholder">[Legal Business Name, e.g. Amoraea, LLC]</span></dd>
+      </div>
+      <div class="info-item">
+        <dt>Business address</dt>
+        <dd><span class="placeholder">[Street Address, Austin, TX ZIP]</span></dd>
+      </div>
+      <div class="info-item">
+        <dt>Contact email</dt>
+        <dd><span class="placeholder">[support@amoraea.com]</span></dd>
+      </div>
+      <div class="info-item">
+        <dt>Contact phone</dt>
+        <dd><span class="placeholder">[+1 (XXX) XXX-XXXX]</span></dd>
+      </div>
+      <div class="info-item">
+        <dt>Website</dt>
+        <dd><span class="placeholder">[amoraea.com]</span></dd>
+      </div>
+      <div class="info-item">
+        <dt>Product</dt>
+        <dd>Amoraea — AI-guided matchmaking app (iOS &amp; Android)</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Opt-in process</div>
+    <h2>How users consent to receive texts</h2>
+    <div class="optin-layout">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="app-header">
+            <div class="dot">a</div>
+            <span>Amoraea</span>
+          </div>
+          <h4>Stay in the loop</h4>
+          <div class="consent-copy">
+            By checking this box, you agree to receive text messages from Amoraea, including match notifications and account updates, at the phone number provided. Message and data rates may apply. Message frequency varies. Reply STOP to opt out, HELP for help. Consent is not a condition of using Amoraea. See our Privacy Policy and Terms of Service.
+          </div>
+          <div class="toggle-row">
+            <div class="checkbox">✓</div>
+            <p>Yes, text me match updates and account alerts.</p>
+          </div>
+          <div class="fake-btn">Continue</div>
+        </div>
+      </div>
+      <div class="optin-desc">
+        <h3>Where this screen appears</h3>
+        <p>During onboarding, after a user enters their phone number for account verification, Amoraea presents a clearly labeled, unchecked consent checkbox alongside the full disclosure text shown at left.</p>
+        <ol>
+          <li>User enters their mobile number during signup.</li>
+          <li>The consent checkbox is displayed unchecked — nothing is pre-selected on the user's behalf.</li>
+          <li>The user must actively tap the checkbox to opt in before continuing.</li>
+          <li>Declining the checkbox does not block account creation — SMS consent is never required to use the app.</li>
+          <li>Users can revisit and change this preference anytime from Settings &gt; Notifications.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Consent language</div>
+    <h2>Exact opt-in disclosure</h2>
+    <p>This is the verbatim text shown to users at the point of opt-in, reproduced above in the app screen and repeated here for reference:</p>
+    <div class="consent-box">
+      "By checking this box, you agree to receive text messages from Amoraea, including match notifications and account updates, at the phone number provided. Message and data rates may apply. Message frequency varies. Reply STOP to opt out, HELP for help. Consent is not a condition of using Amoraea. See our Privacy Policy and Terms of Service."
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Program details</div>
+    <h2>What users receive</h2>
+    <div class="details-grid">
+      <div class="detail-card">
+        <div class="label">Message types</div>
+        <div class="value">Match alerts, account &amp; verification updates</div>
+      </div>
+      <div class="detail-card">
+        <div class="label">Message frequency</div>
+        <div class="value"><span class="placeholder">[e.g. up to 4 msgs/month]</span></div>
+      </div>
+      <div class="detail-card">
+        <div class="label">Cost</div>
+        <div class="value">Msg &amp; data rates may apply</div>
+      </div>
+    </div>
+
+    <div class="stop-help">
+      <div class="card">
+        <div class="kw">STOP</div>
+        <p>Reply STOP at any time to a message to opt out immediately. No further messages will be sent.</p>
+      </div>
+      <div class="card">
+        <div class="kw">HELP</div>
+        <p>Reply HELP to receive support contact information for the SMS program.</p>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      Carriers are not liable for delayed or undelivered messages. Amoraea does not sell, share, or rent mobile phone numbers or opt-in data to any third party for marketing purposes.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Policies</div>
+    <h2>Privacy &amp; terms</h2>
+    <p>Full policies governing data use and the SMS program.</p>
+    <div class="link-row">
+      <a href="/privacy/">Privacy Policy →</a>
+      <a href="#">Terms of Service →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Amoraea. All rights reserved.</span>
+    <span><span class="placeholder">support@amoraea.com</span></span>
+  </div>
+</footer>
+
+</body>
+</html>
