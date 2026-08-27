@@ -326,13 +326,33 @@
   <div class="wrap">
     <div class="eyebrow">Opt-in process</div>
     <h2>How users consent to receive texts</h2>
+    <div class="optin-layout">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="app-header">
+            <div class="dot">a</div>
+            <span>Amoraea</span>
+          </div>
+          <h4>Verify your number</h4>
+          <div class="consent-copy">
+            By checking this box, you agree to receive a one-time text message from Amoraea containing a verification code, at the phone number provided. Message and data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of using Amoraea. See our Privacy Policy and Terms of Service.
+          </div>
+          <div class="toggle-row">
+            <div class="checkbox">✓</div>
+            <p>By checking this box, you agree to receive a one-time text message from Amoraea containing a verification code, at the phone number provided. Message and data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of using Amoraea. See our Privacy Policy and Terms of Service.</p>
+          </div>
+          <div class="fake-btn">Continue</div>
+        </div>
+      </div>
       <div class="optin-desc">
-        <p>During onboarding, after a user enters their phone number for account verification, Amoraea presents a clearly labeled, unchecked consent checkbox alongside the full disclosure text shown at left.</p>
+        <h3>Where this screen appears</h3>
+        <p>During onboarding, after a user enters their phone number for account verification, Amoraea presents a clearly labeled, unchecked consent checkbox alongside the full disclosure text shown at left. That disclosure covers a one-time verification code only. This number does not send match alerts, account updates, or other recurring SMS.</p>
         <ol>
           <li>User enters their mobile number during signup.</li>
           <li>The consent checkbox is displayed unchecked — nothing is pre-selected on the user's behalf.</li>
           <li>The user must actively tap the checkbox to opt in before continuing.</li>
-          <li>Users can revisit and change this preference anytime from Settings &gt; Notifications.</li>
+          <li>Users can manage in-app notification preferences from Settings &gt; Notifications. That screen does not opt users into SMS on this number. Match alerts and account updates, if offered later, will use a separate messaging program and phone number.</li>
         </ol>
       </div>
     </div>
@@ -345,7 +365,7 @@
     <h2>Exact opt-in disclosure</h2>
     <p>This is the verbatim text shown to users at the point of opt-in, reproduced above in the app screen and repeated here for reference:</p>
     <div class="consent-box">
-      "By checking this box, you agree to receive text messages from Amoraea, including match notifications and account updates, at the phone number provided. Message and data rates may apply. Message frequency varies. Reply STOP to opt out, HELP for help. Consent is not a condition of using Amoraea. See our Privacy Policy and Terms of Service."
+      "By checking this box, you agree to receive a one-time text message from Amoraea containing a verification code, at the phone number provided. Message and data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of using Amoraea. See our Privacy Policy and Terms of Service."
     </div>
   </div>
 </section>
@@ -357,11 +377,11 @@
     <div class="details-grid">
       <div class="detail-card">
         <div class="label">Message types</div>
-        <div class="value">Match alerts, account &amp; verification updates</div>
+        <div class="value">One-time account verification code</div>
       </div>
       <div class="detail-card">
         <div class="label">Message frequency</div>
-        <div class="value">Once a day at most</div>
+        <div class="value">A single message, sent once, at account creation</div>
       </div>
       <div class="detail-card">
         <div class="label">Cost</div>
