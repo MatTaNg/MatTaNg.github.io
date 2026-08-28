@@ -134,62 +134,12 @@
     align-items:start;
     margin-top:24px;
   }
-  .phone{
-    background:var(--ink);
-    border-radius:28px;
-    padding:12px;
-    box-shadow:0 12px 32px rgba(27,42,65,0.18);
-  }
-  .phone-screen{
-    background:#fff;
+  .phone-shot{
+    width:100%;
+    max-width:240px;
     border-radius:18px;
-    padding:18px 16px 20px;
-    min-height:360px;
-  }
-  .phone-notch{
-    width:60px;height:5px;background:rgba(255,255,255,0.25);
-    border-radius:4px;margin:0 auto 14px;
-  }
-  .app-header{
-    display:flex;align-items:center;gap:8px;margin-bottom:16px;
-  }
-  .app-header .dot{
-    width:26px;height:26px;border-radius:50%;
-    background:var(--ink);color:var(--gold);
-    display:flex;align-items:center;justify-content:center;
-    font-family:'Newsreader',serif;font-style:italic;font-size:13px;
-  }
-  .app-header span{font-size:13px;font-weight:600;color:var(--ink);}
-  .phone-screen h4{
-    font-family:'Newsreader',serif;font-weight:500;font-size:16px;
-    margin:0 0 10px;color:var(--ink);
-  }
-  .phone-screen .consent-copy{
-    font-size:11.5px;
-    color:var(--text-soft);
-    line-height:1.5;
-    background:var(--paper-2);
-    border-radius:10px;
-    padding:10px 12px;
-    margin-bottom:14px;
-  }
-  .toggle-row{
-    display:flex;align-items:flex-start;gap:10px;
-    margin-bottom:16px;
-  }
-  .checkbox{
-    width:18px;height:18px;border-radius:5px;
-    border:1.5px solid var(--gold);
-    background:var(--gold);
-    flex-shrink:0;margin-top:1px;
-    display:flex;align-items:center;justify-content:center;
-    color:#fff;font-size:12px;
-  }
-  .toggle-row p{margin:0;font-size:11.5px;color:var(--text);line-height:1.5;}
-  .fake-btn{
-    background:var(--ink);color:var(--paper);
-    text-align:center;font-size:13px;font-weight:600;
-    padding:10px;border-radius:10px;
+    box-shadow:0 12px 32px rgba(27,42,65,0.18);
+    display:block;
   }
   .optin-desc h3{font-size:17px;margin-bottom:10px;}
   .optin-desc p{font-size:15px;color:var(--text-soft);margin-bottom:14px;}
@@ -327,32 +277,18 @@
     <div class="eyebrow">Opt-in process</div>
     <h2>How users consent to receive texts</h2>
     <div class="optin-layout">
-      <div class="phone">
-        <div class="phone-screen">
-          <div class="phone-notch"></div>
-          <div class="app-header">
-            <div class="dot">a</div>
-            <span>Amoraea</span>
-          </div>
-          <h4>Verify your number</h4>
-          <div class="consent-copy">
-            By checking this box, you agree to receive a one-time text message from Amoraea containing a verification code, at the phone number provided. Message and data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of using Amoraea. See our Privacy Policy and Terms of Service.
-          </div>
-          <div class="toggle-row">
-            <div class="checkbox">✓</div>
-            <p>By checking this box, you agree to receive a one-time text message from Amoraea containing a verification code, at the phone number provided. Message and data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of using Amoraea. See our Privacy Policy and Terms of Service.</p>
-          </div>
-          <div class="fake-btn">Continue</div>
-        </div>
-      </div>
+      <img
+        class="phone-shot"
+        src="/assets/account-creation-sms-consent.png"
+        alt="Amoraea account creation screen showing the unchecked SMS verification consent checkbox"
+      />
       <div class="optin-desc">
         <h3>Where this screen appears</h3>
-        <p>During onboarding, after a user enters their phone number for account verification, Amoraea presents a clearly labeled, unchecked consent checkbox alongside the full disclosure text shown at left. That disclosure covers a one-time verification code only. This number does not send match alerts, account updates, or other recurring SMS.</p>
+        <p>During onboarding, after a user enters their phone number for account verification, Amoraea presents a clearly labeled, unchecked consent checkbox alongside the disclosure text shown at left. That disclosure covers a one-time verification code only. This number does not send match alerts, account updates, or other recurring SMS.</p>
         <ol>
           <li>User enters their mobile number during signup.</li>
           <li>The consent checkbox is displayed unchecked — nothing is pre-selected on the user's behalf.</li>
           <li>The user must actively tap the checkbox to opt in before continuing.</li>
-          <li>Users can manage in-app notification preferences from Settings &gt; Notifications. That screen does not opt users into SMS on this number. Match alerts and account updates, if offered later, will use a separate messaging program and phone number.</li>
         </ol>
       </div>
     </div>
@@ -365,46 +301,11 @@
     <h2>Exact opt-in disclosure</h2>
     <p>This is the verbatim text shown to users at the point of opt-in, reproduced above in the app screen and repeated here for reference:</p>
     <div class="consent-box">
-      "By checking this box, you agree to receive a one-time text message from Amoraea containing a verification code, at the phone number provided. Message and data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of using Amoraea. See our Privacy Policy and Terms of Service."
+      "I agree to receive a one-time text message from Amoraea to verify my phone number. Msg &amp; data rates may apply."
     </div>
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="eyebrow">Program details</div>
-    <h2>What users receive</h2>
-    <div class="details-grid">
-      <div class="detail-card">
-        <div class="label">Message types</div>
-        <div class="value">One-time account verification code</div>
-      </div>
-      <div class="detail-card">
-        <div class="label">Message frequency</div>
-        <div class="value">A single message, sent once, at account creation</div>
-      </div>
-      <div class="detail-card">
-        <div class="label">Cost</div>
-        <div class="value">Msg &amp; data rates may apply</div>
-      </div>
-    </div>
-
-    <div class="stop-help">
-      <div class="card">
-        <div class="kw">STOP</div>
-        <p>Reply STOP at any time to a message to opt out immediately. No further messages will be sent.</p>
-      </div>
-      <div class="card">
-        <div class="kw">HELP</div>
-        <p>Reply HELP to receive support contact information for the SMS program.</p>
-      </div>
-    </div>
-
-    <div class="disclaimer">
-      Carriers are not liable for delayed or undelivered messages. Amoraea does not sell, share, or rent mobile phone numbers or opt-in data to any third party for marketing purposes.
-    </div>
-  </div>
-</section>
 
 <section>
   <div class="wrap">
@@ -413,7 +314,6 @@
     <p>Full policies governing data use and the SMS program.</p>
     <div class="link-row">
       <a href="/privacy/">Privacy Policy →</a>
-      <a href="#">Terms of Service →</a>
     </div>
   </div>
 </section>
